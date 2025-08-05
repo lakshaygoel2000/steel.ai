@@ -159,7 +159,7 @@ const ChatInterface = ({ projectParams }) => {
               strokeLinejoin="round"
               onClick={(e) => { e.stopPropagation(); toggleParamsCollapse(); }}
             >
-              <polyline points="6 9 12 15 18 9" />
+              <polyline points="19 19 8 10 19 1" />
             </svg>
           </div>
         </div>

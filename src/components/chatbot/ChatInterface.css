@@ -132,7 +132,7 @@
   position: fixed;
   height: max-content;
   top: calc(100vh - 86%);
-  /* left: 10px; */
+  left: 10px;
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.589);
   backdrop-filter: blur(5px);
@@ -487,13 +487,14 @@
   }
   
   .floating-toggle-btn {
-    /* left: 10px; */
+    top: calc(100vh - 89%);
+    width: 100px;
     padding: var(--spacing-sm) var(--spacing-base);
     font-size: var(--font-size-xs);
 }
 
 .chat-messages {
-    margin-top: 3em;
+    margin-top: 60px;
     padding: var(--spacing-base);
     padding-bottom: var(--spacing-3xl);
   }
@@ -522,8 +523,7 @@
         font-size: 8px;
     }
     .chat-input-container{
-        padding: 0;
-        padding-bottom: 1.5em;
+        padding-bottom: 1em;
     }
     .floating-toggle-btn{
       max-width: 100px;
