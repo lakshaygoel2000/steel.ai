@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from './AuthProvider';
 import ResidentialConst from '../../assets/video/ResidentialConstVideo.mp4'
 import CommercialConst from '../../assets/video/CommercialConstVideo.mp4'
@@ -20,13 +21,14 @@ export default function LoginPage() {
     }
   }, [firstVideoPlay])
 
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (user) {
       // Redirect to home page after login
-      window.location.href = '/model';
+      navigate('/model');
     }
-  }, [user]);
+  }, [user, navigate]);
 
   return (
     <div className="login-page">
