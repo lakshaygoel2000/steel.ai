@@ -238,9 +238,10 @@
   }
   
   .login-panel-left {
-    flex: none;
+    flex: 1;
     padding: var(--spacing-xl);
     min-height: 50vh;
+    /* box-shadow: 0 12px 12px rgba(0, 0, 0, 0.332); */
   }
   
   .login-panel-left h2 {
@@ -249,10 +250,13 @@
   }
   
   .login-panel-right {
-    flex: none;
+    flex: 3;
     height: 50vh;
   }
   
+  .house-video{
+    object-fit: contain;
+  }
   /* Welcome Screen Responsive */
   .welcome-screen {
     padding: var(--spacing-base);

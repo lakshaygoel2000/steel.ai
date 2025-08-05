@@ -288,16 +288,17 @@
 /* ==========================================================================
    Chat Input
    ========================================================================== */
-
 .chat-input-container {
-  padding: var(--spacing-lg);
+  padding: var(--spacing-sm);
   padding-top: 0;
-  /* background-color: var(--bg-surface); */
-  position: absolute;
+  position: fixed; /* ✅ Fixed instead of absolute */
   bottom: 0;
+  left: 0;
   width: 100%;
-  margin-bottom: 5px;
   backdrop-filter: blur(10px);
+  z-index: 9999; /* ✅ Ensure it's above other elements */
+  background-color: transparent;
+  box-shadow: 0 12px 15px rgba(0,0,0,0.1); /* optional for better visibility */
 }
 
 .chat-form {
@@ -306,7 +307,9 @@
 
 .input-wrapper {
   display: flex;
+  justify-content: center;
   align-items: flex-end;
+  align-items: center;
   gap: var(--spacing-sm);
   background-color: var(--bg-surface);
   /* box-shadow: 0 20px 10px rgba(197, 197, 197, 0.76); */
@@ -521,9 +524,6 @@
     .message-content{
         top: 10%;
         font-size: 8px;
-    }
-    .chat-input-container{
-        padding-bottom: 1em;
     }
     .floating-toggle-btn{
       max-width: 100px;
