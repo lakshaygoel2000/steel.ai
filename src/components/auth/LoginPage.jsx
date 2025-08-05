@@ -1,9 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useAuth } from './AuthProvider';
-import './LoginPage.css';
 import ResidentialConst from '../../assets/video/ResidentialConstVideo.mp4'
 import CommercialConst from '../../assets/video/CommercialConstVideo.mp4'
-import GoogleButton from 'react-google-button'
 
 export default function LoginPage() {
   const { signInWithGoogle, user } = useAuth();
@@ -26,7 +24,7 @@ export default function LoginPage() {
   useEffect(() => {
     if (user) {
       // Redirect to home page after login
-      window.location.href = '/';
+      window.location.href = '/model';
     }
   }, [user]);
 

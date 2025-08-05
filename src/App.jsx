@@ -23,9 +23,9 @@ export default function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/" element={<LoginPage />} />
           <Route
-            path="/"
+            path="/model"
             element={
               <ProtectedRoute>
                 {!projectParams ? (

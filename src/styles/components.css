@@ -1,0 +1,318 @@
+/* Component-specific styles - Light Theme & Responsive */
+
+/* Header styles - Responsive */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-base) var(--spacing-lg);
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: var(--border-width) solid var(--border-color);
+  z-index: var(--z-header);
+  box-shadow: var(--shadow-sm);
+  height: 60px;
+}
+
+.header-title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-button {
+  background: transparent;
+  border: var(--border-width) solid var(--border-color);
+  color: var(--text-primary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-base);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-primary);
+}
+
+.header-button:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.header-avatar {
+  margin-top: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: var(--border-width) solid var(--border-color);
+}
+
+/* Mobile Header */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: var(--font-size-xl);
+  cursor: pointer;
+  padding: var(--spacing-xs);
+}
+
+/* Login Page styles - Responsive */
+.login-page {
+  display: flex;
+  gap: 2px;
+  min-height: 100vh;
+}
+
+.login-panel-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-lg);
+  background: var(--bg-primary);
+}
+
+.login-panel-left h2 {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--spacing-3xl);
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.custom-google-signin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border: var(--border-width) solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-base) var(--spacing-xl);
+  border-radius: var(--border-radius-base);
+  font-family: var(--font-primary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.custom-google-signin:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
+}
+
+.google-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.login-panel-right {
+  flex: 3;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+}
+
+.house-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Welcome Screen styles - Responsive */
+.welcome-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: var(--spacing-2xl) var(--spacing-base);
+  background: var(--bg-secondary);
+}
+
+.welcome-content {
+  position: fixed;
+  top: 70px;
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+  box-sizing: border-box;
+  margin-top: 10px;
+  width: 95%;
+  max-width: 1200px;
+  background: var(--bg-surface);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-xl);
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;  
+}
+
+.welcome-header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.welcome-header h2 {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-base);
+  color: var(--text-primary);
+}
+
+.project-form {
+  width: 100%;
+  /* overflow-y: auto; */
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.form-group {
+  margin-bottom: var(--spacing-base);
+}
+
+.form-group-wide {
+  grid-column: 1 / -1;
+}
+
+/* Responsive Components */
+@media (max-width: 768px) {
+  /* Header Responsive */
+  .header {
+    padding: var(--spacing-sm) var(--spacing-base);
+  }
+  
+  .header-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .header-right .header-button {
+    font-size: 8px;
+    width: 54px;
+  }
+  
+  .header-right.mobile-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--bg-surface);
+    border-bottom: var(--border-width) solid var(--border-color);
+    padding: var(--spacing-base);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  /* Login Page Responsive */
+  .login-page {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .login-panel-left {
+    flex: none;
+    padding: var(--spacing-xl);
+    min-height: 50vh;
+  }
+  
+  .login-panel-left h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .login-panel-right {
+    flex: none;
+    height: 50vh;
+  }
+  
+  /* Welcome Screen Responsive */
+  .welcome-screen {
+    padding: var(--spacing-base);
+  }
+  
+  .welcome-content {
+    padding: var(--spacing-xl);
+    /* margin: var(--spacing-base); */
+  }
+  
+  .welcome-header h2 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-base);
+  }
+}
+
+@media (max-width: 480px) {
+  /* Header Mobile */
+  .header {
+    padding: var(--spacing-sm);
+  }
+  
+  .header-title {
+    font-size: var(--font-size-base);
+  }
+  
+  /* Login Page Mobile */
+  .login-panel-left {
+    padding: var(--spacing-lg);
+  }
+  
+  .login-panel-left h2 {
+    font-size: var(--font-size-xl);
+  }
+  
+  .custom-google-signin {
+    padding: var(--spacing-sm) var(--spacing-lg);
+  }
+  
+  /* Welcome Screen Mobile */
+  .welcome-content {
+    padding: var(--spacing-lg);
+    border: none;
+    box-shadow: none;
+  }
+  
+  .form-grid {
+    gap: var(--spacing-sm);
+  }
+}
+
+/* Touch-friendly improvements */
+@media (max-width: 768px) {
+  .btn,
+  .header-button,
+  .custom-google-signin {
+    min-height: 35px;
+    min-width: 44px;
+  }
+}

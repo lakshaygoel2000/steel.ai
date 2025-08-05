@@ -14,19 +14,18 @@ export default function Header() {
           </>
         ) : (
           <>
-          <div>
-            {/* <h5>{user.displayName}</h5> */}
             <button className="header-button" onClick={logout}>Logout</button>
-          </div>
-            {user.photoURL && (
-              <img
-                src={user.photoURL}
-                alt={user.displayName || 'User'}
-                className="header-avatar"
-                title={user.displayName}
-                referrerPolicy="no-referrer"
-              />
-            )}
+            <div>
+              {user.photoURL && (
+                <img
+                  src={user.photoURL}
+                  alt={user.displayName || 'User'}
+                  className="header-avatar"
+                  title={user.displayName}
+                  referrerPolicy="no-referrer"
+                />
+              )}
+            </div>
           </>
         )}
       </div>

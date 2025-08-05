@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { GeminiService } from '../../services/geminiApi';
 import { useAuth } from '../auth/AuthProvider';
+import './ChatInterface.css';
 
 
 const ChatInterface = ({ projectParams }) => {
@@ -127,7 +128,21 @@ const ChatInterface = ({ projectParams }) => {
 
   return (
     <div className="chat-interface">
-      <div className="parameters-panel" ref={paramsPanelRef}>
+      {isParamsCollapsed && (
+        <button 
+          className="floating-toggle-btn" 
+          onClick={toggleParamsCollapse}
+          title="Open Project Parameters"
+          >
+            <p>Edit Parameters</p>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="16"></line>
+            <line x1="8" y1="12" x2="16" y2="12"></line>
+          </svg>
+        </button>
+      )}
+      <div className={`parameters-panel ${isParamsCollapsed ? 'collapsed' : ''}`} ref={paramsPanelRef}>
         <div className="parameters-header" onClick={toggleParamsCollapse}>
           <h3>Project Parameters</h3>
           <div className="header-controls">
@@ -182,7 +197,6 @@ const ChatInterface = ({ projectParams }) => {
           ))}
           {isTyping && (
             <div className="message assistant" id="typing-indicator">
-              <div className="message-avatar">AI</div>
               <div className="typing-indicator">
                 <span>AI is thinking</span>
                 <div className="typing-dots">

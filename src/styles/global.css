@@ -1,2 +1,4 @@
-/* Import the provided style.css content here */
-@import '../../style.css';
+/* Global styles for the Steel AI application */
+@import './variables.css';
+@import './base.css';
+@import './components.css';
