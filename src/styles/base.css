@@ -13,12 +13,12 @@ html {
 body {
   font-family: 'Roboto-Flex';
   font-family: var(--font-primary);
-  background-color: var(--bg-primary);
+  background-color: white;
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
   overflow-y: hidden;
-  margin: 10px;
+  margin: 1em;
 }
 
 #root {

@@ -169,7 +169,7 @@ const ChatInterface = ({ projectParams }) => {
               <div key={param} className="parameter-item">
                 <div className='param-row'>
                   <span className="parameter-label">{getParamDisplayName(param)}:</span>
-                  <button className="btn btn--sm edit-param-btn" title='Edit' onClick={() => openEditModal(param)} >✎</button>
+                  <button className="btn btn--sm edit-param-btn" title='Edit' onClick={() => openEditModal(param)} >✏️</button>
                 </div>
                 <span className="parameter-value">{param === 'plotSize' ? `${params[param]} sq ft` : params[param]}</span>
               </div>
