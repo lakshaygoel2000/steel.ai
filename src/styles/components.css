@@ -239,8 +239,9 @@
   
   .login-panel-left {
     flex: 1;
-    padding: var(--spacing-xl);
-    min-height: 50vh;
+    padding-bottom: 0;
+    /* padding-top: var(--spacing-xl); */
+    /* min-height: 50vh; */
     /* box-shadow: 0 12px 12px rgba(0, 0, 0, 0.332); */
   }
   
@@ -254,9 +255,6 @@
     height: 50vh;
   }
   
-  .house-video{
-    object-fit: contain;
-  }
   /* Welcome Screen Responsive */
   .welcome-screen {
     padding: var(--spacing-base);
@@ -288,10 +286,7 @@
   }
   
   /* Login Page Mobile */
-  .login-panel-left {
-    padding: var(--spacing-lg);
-  }
-  
+    
   .login-panel-left h2 {
     font-size: var(--font-size-xl);
   }
